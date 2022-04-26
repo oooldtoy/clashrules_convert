@@ -12,17 +12,6 @@ def hello_world():
         print(1)
     return 'hello world'
 
-#------------------------------------------#
-
-@app.route('/wakeonlan')
-def wakeonlan():
-    if request.method == 'GET':
-        mac = request.args.get('mac')#以json形式发送
-        ip_address = request.args.get('ip_address')
-        port = request.args.get('port')
-        print(mac,ip_address,port)
-    send_magic_packet(mac,ip_address=ip_address,port=int(port))
-    return 'ok'
 
 #-----------------------------------------#
 
